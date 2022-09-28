@@ -54,8 +54,9 @@
 
 **Chronology:**
 
-- Component trees for front and back.
+- Data and component plans for back.
 - Figma wireframes.
+- Data and component plans for front.
 - Build back-end basics: GET route for all incidents, POST route for incidents.
 - Test back-end basics.
 - Build front-end basics: chronological feed from GET all route, page to POST incidents.
