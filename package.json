@@ -1,0 +1,29 @@
+{
+  "name": "moorsback",
+  "description": "This will be the back-end repository for the remake of the wildfire tracker I'm making from the Couchbase Hackathon I did in August 2022!",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madisonlowe/moorsback.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madisonlowe/moorsback/issues"
+  },
+  "homepage": "https://github.com/madisonlowe/moorsback#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.1",
+    "mongodb": "^4.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
