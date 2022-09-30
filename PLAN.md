@@ -54,11 +54,11 @@
 
 **Chronology:**
 
-- Data and component plans for back.
-- Figma wireframes.
-- Data and component plans for front.
+- Data and component plans for back. **DONE.**
+- Figma wireframes. **DONE.**
 - Build back-end basics: GET route for all incidents, POST route for incidents.
 - Test back-end basics.
+- Data and component plans for front.
 - Build front-end basics: chronological feed from GET all route, page to POST incidents.
 - Test front-end basics.
 - Style.
