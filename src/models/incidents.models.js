@@ -34,7 +34,7 @@ export const IncidentSchema = new schema({
     required: "Please describe the incident.",
   },
   location: {
-    address: [addressSchema],
+    address: addressSchema,
     // geojson: {
     //   type: String,
     //   enum: [Point],

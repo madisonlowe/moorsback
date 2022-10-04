@@ -1,9 +1,8 @@
 import express from "express";
-
-import allRoutes from "./src/routes/incidents.routes.js";
-
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
+
+import allRoutes from "./src/routes/incidents.routes.js";
 
 const app = express();
 
