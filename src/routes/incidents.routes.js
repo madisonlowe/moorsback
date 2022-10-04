@@ -3,6 +3,7 @@ import {
   getIncidents,
   getIncidentById,
   updateIncidentById,
+  deleteIncidentById,
 } from "../controllers/incidents.controller.js";
 
 const allRoutes = (app) => {
@@ -11,9 +12,7 @@ const allRoutes = (app) => {
   app
     .route("/incidents/:id")
     .get(getIncidentById)
-    .delete((req, res) => {
-      res.send("DELETE requests will go here.");
-    })
+    .delete(deleteIncidentById)
     .put(updateIncidentById);
 };
 

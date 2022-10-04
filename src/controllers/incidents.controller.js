@@ -43,3 +43,12 @@ export const updateIncidentById = (req, res) => {
       res.json(incident);
     };
 };
+
+export const deleteIncidentById = (req, res) => {
+  Incident.remove({ _id: req.params.id }, (err, incident) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json({ message: "This record was deleted." });
+  });
+};
