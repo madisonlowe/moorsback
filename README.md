@@ -1,5 +1,5 @@
-This will be the back-end repository for the remake of the wildfire tracker I'm making from the Couchbase Hackathon I did in August 2022!
+This is the back-end repository for the remake of the wildfire tracker I made with [@rachelalk](https://github.com/rachelalk) during a one-day Couchbase Hackathon in August 2022.
 
-Taking a chance to experiment with another non-relational database, this time using MongoDB.
+I wanted to work a bit more with non-relational databases, and get some more practice in with back-end tech and testing.
 
-Going to work on the back-end first, before setting up the front: just getting things started!
+Just getting things set up, will udpate this document more fully when things are a bit less messy!
