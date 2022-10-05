@@ -52,19 +52,3 @@ export const deleteIncidentById = (req, res) => {
     res.json({ message: "This record was deleted." });
   });
 };
-
-// TEST FOR POSTMAN
-// {
-//     "type": "Test",
-//     "description": "Test incident.",
-//     "location": {
-//         "address": {
-//             "firstline": "14 Testing Drive",
-//             "secondline": "Test Village",
-//             "postcode": "T35 T1NG",
-//             "city": "Practiceford",
-//             "county": "Testshire"
-//         },
-//         "what3words": "test.practice.tryout"
-//     }
-// }
