@@ -25,9 +25,9 @@ describe("Creating documents in MongoDB", () => {
 
     const newIncident = new Incident(incidentObject);
     newIncident
-      .save() // returns a promise after some time
+      .save() // Returns a promise after some time.
       .then(() => {
-        //if the newIncident is saved in db and it is not new
+        // If the newIncident is saved in DB and it is not new, then...
         assert(!newIncident.isNew);
         done();
       });
