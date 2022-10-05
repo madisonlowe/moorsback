@@ -22,14 +22,14 @@ const addressSchema = new schema({
   },
 });
 
-const lonlatSchema = new schema({
-  0: {
-    type: mongoose.Decimal128, // NEEDS GOOGLING AND EDITING
-  },
-  1: {
-    type: mongoose.Decimal128,
-  },
-});
+// const lonlatSchema = new schema({
+//   0: {
+//     type: mongoose.Decimal128, // NEEDS GOOGLING AND EDITING
+//   },
+//   1: {
+//     type: mongoose.Decimal128,
+//   },
+// });
 
 // const geojsonSchema = new schema({
 //   geojson: {
@@ -83,4 +83,8 @@ TEST IN POSTMAN
         "what3words": "test.practice.tryout",
     }
 }
+*/
+
+/*
+GeoJSON and using time in schema interesting, but not sure on best or easiest way to get that information from front-end, so going to just put a pause on ordering how that data's gathered, until I know the easiest / most intuitive way to get it.
 */
