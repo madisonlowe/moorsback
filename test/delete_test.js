@@ -41,7 +41,8 @@ describe("Deleting an Incident", () => {
       .then((incident) => {
         assert(incident === null);
         done();
-      });
+      })
+      .catch((err) => done(err)); // Catch is for timeout issue calling done().
   });
 
   it("Removes an incident", (done) => {
@@ -55,7 +56,8 @@ describe("Deleting an Incident", () => {
       .then((incident) => {
         assert(incident === null);
         done();
-      });
+      })
+      .catch((err) => done(err)); // Catch is for timeout issue calling done().
   });
 
   it("Removes an incident using its id", (done) => {
@@ -69,6 +71,7 @@ describe("Deleting an Incident", () => {
       .then((incident) => {
         assert(incident === null);
         done();
-      });
+      })
+      .catch((err) => done(err)); // Catch is for timeout issue calling done().
   });
 });
