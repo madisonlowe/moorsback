@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { Decimal128 } from "mongoose";
 
 const schema = mongoose.Schema;
 
@@ -17,6 +18,15 @@ const addressSchema = new schema({
   },
   county: {
     type: String,
+  },
+});
+
+const lonlatSchema = new schema({
+  0: {
+    type: Decimal128, // NEEDS GOOGLING AND EDITING
+  },
+  1: {
+    type: Decimal128,
   },
 });
 
@@ -43,14 +53,6 @@ export const IncidentSchema = new schema({
     //   },
     // },
     what3words: String,
-    // lonlat: {
-    //   type: [Array],
-    //   0: {
-    //     type: Number,
-    //   },
-    //   1: {
-    //     type: Number,
-    //   },
-    // },
+    lonlat: [lonlatSchema],
   },
 });
