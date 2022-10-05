@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha -r dotenv/config --recursive --exit --timeout 10000",
     "dev": "nodemon -r dotenv/config index.js"
   },
   "repository": {
