@@ -6,6 +6,7 @@ const Incident = mongoose.model("Incident", IncidentSchema);
 
 describe("Deleting an Incident", () => {
   const incidentObject = {
+    _id: "t35tid",
     type: "Test",
     when: "Test time of day or date description.",
     description:
@@ -27,37 +28,6 @@ describe("Deleting an Incident", () => {
   beforeEach(() => {
     incident = new Incident(incidentObject);
     incident.save().then(() => done());
-  });
-
-  it("Removes an Incident using its instance", (done) => {
-    incident
-      .remove()
-      .then(() =>
-        Incident.findOne({
-          description:
-            "Testing deleting an incidentObject with Mocha in delete_test.js.",
-        })
-      )
-      .then((incident) => {
-        assert(incident === null);
-        done();
-      })
-      .catch((err) => done(err)); // Catch is for timeout issue calling done().
-  });
-
-  it("Removes an incident", (done) => {
-    Incident.findOneAndRemove({ type: "Test" })
-      .then(() =>
-        Incident.findOne({
-          description:
-            "Testing deleting an incidentObject with Mocha in delete_test.js.",
-        })
-      )
-      .then((incident) => {
-        assert(incident === null);
-        done();
-      })
-      .catch((err) => done(err)); // Catch is for timeout issue calling done().
   });
 
   it("Removes an incident using its id", (done) => {

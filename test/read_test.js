@@ -31,12 +31,14 @@ describe("Reading Details of Incident", () => {
     Incident.findOne({
       description:
         "Testing reading a new incidentObject with Mocha in read_test.js.",
-    }).then((incident) => {
-      assert(
-        incident.description ===
-          "Testing reading a new incidentObject with Mocha in read_test.js."
-      );
-      done();
-    });
+    })
+      .then((incident) => {
+        assert(
+          incident.description ===
+            "Testing reading a new incidentObject with Mocha in read_test.js."
+        );
+        done();
+      })
+      .catch((err) => done(err));
   });
 });
