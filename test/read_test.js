@@ -26,7 +26,7 @@ beforeEach(() => {
   incident.save().then(() => done());
 });
 
-describe("Reading Details of Incident", () => {
+describe("Reading details of Incident", () => {
   it("Finds incident with the correct description", (done) => {
     Incident.findOne({
       description:
@@ -34,7 +34,7 @@ describe("Reading Details of Incident", () => {
     })
       .then((incident) => {
         assert(
-          incident.description ===
+          incident.description === // This occasionally returns null TypeError? Not on every test.
             "Testing reading a new incidentObject with Mocha in read_test.js."
         );
         done();
