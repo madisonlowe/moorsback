@@ -7,7 +7,7 @@ const Incident = mongoose.model("Incident", IncidentSchema);
 describe("Creating documents in MongoDB", () => {
   it("Creates a New Incident", (done) => {
     const incidentObject = {
-      type: "Test",
+      type: "Create Test",
       when: "Test time of day or date description.",
       description:
         "Testing creating a new incidentObject with Mocha in create_test.js.",

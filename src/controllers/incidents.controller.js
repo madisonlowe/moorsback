@@ -33,6 +33,7 @@ export const getIncidentById = (req, res) => {
   });
 };
 
+// UPDATE route not currently working on Postman tests.
 export const updateIncidentById = (req, res) => {
   Incident.findOneAndUpdate({ _id: req.params.id }, req.body),
     { new: true },

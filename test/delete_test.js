@@ -7,7 +7,7 @@ const Incident = mongoose.model("Incident", IncidentSchema);
 describe("Deleting an Incident", () => {
   const incidentObject = {
     _id: "t35tid",
-    type: "Test",
+    type: "Delete Test",
     when: "Test time of day or date description.",
     description:
       "Testing deleting an incidentObject with Mocha in delete_test.js.",

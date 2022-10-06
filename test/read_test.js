@@ -4,25 +4,19 @@ import assert from "assert";
 import { IncidentSchema } from "../src/models/incidents.models.js";
 const Incident = mongoose.model("Incident", IncidentSchema);
 
-const incidentObject = {
-  type: "Test",
-  when: "Test time of day or date description.",
-  description:
-    "Testing reading a new incidentObject with Mocha in read_test.js.",
-  location: {
-    address: {
-      firstline: "14 Testing Drive",
-      secondline: "Test Village",
-      postcode: "T35 T1NG",
-      city: "Practiceford",
-      county: "Testshire",
-    },
-    what3words: "test.practice.tryout",
-  },
-};
-
 beforeEach(() => {
-  let incident = new Incident(incidentObject);
+  let incident = new Incident({
+    type: "Read Test",
+    when: "Test time of day or date description.",
+    description:
+      "Testing reading a new incidentObject with Mocha in read_test.js.",
+    location: {
+      address: {
+        firstline: "14 Testing Drive",
+        postcode: "T35 T1NG",
+      },
+    },
+  });
   incident.save().then(() => done());
 });
 
