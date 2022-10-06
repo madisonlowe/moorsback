@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha -r dotenv/config --recursive --exit --timeout 10000",
     "dev": "nodemon -r dotenv/config index.js"
   },
   "repository": {
@@ -22,6 +22,7 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.1",
+    "mocha": "^10.0.0",
     "mongodb": "^4.10.0",
     "mongoose": "^6.6.4",
     "nodemon": "^2.0.20"

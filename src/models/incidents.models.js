@@ -66,6 +66,35 @@ export const IncidentSchema = new schema({
   },
 });
 
+export const testIncidentSchema = new schema({
+  _id: {
+    // For use only for testing! Don't overwrite _id to real database data!
+    type: String,
+  },
+  type: {
+    type: String,
+    required: "Please tell us what kind of incident it was.",
+  },
+  when: {
+    type: String,
+    required: "Please tell us when the incident occurred.",
+  },
+  reportedat: {
+    type: Date,
+    default: Date.now,
+  },
+  description: {
+    type: String,
+    required: "Please describe the incident.",
+  },
+  location: {
+    address: addressSchema,
+    //geojson: geojsonSchema,
+    what3words: String,
+    // lonlat: [lonlatSchema],
+  },
+});
+
 /*
 TEST IN POSTMAN
 {
