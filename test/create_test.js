@@ -32,4 +32,31 @@ describe("Creating documents in MongoDB", () => {
         done();
       });
   });
+
+  // it("Doesn't create a new incident if required type field is missing", (done) => {
+  //   const incidentObject = {
+  //     when: "Test time of day or date description.",
+  //     description:
+  //       "Testing creating a new incidentObject with Mocha in create_test.js.",
+  //     location: {
+  //       address: {
+  //         firstline: "14 Testing Drive",
+  //         secondline: "Test Village",
+  //         postcode: "T35 T1NG",
+  //         city: "Practiceford",
+  //         county: "Testshire",
+  //       },
+  //       what3words: "test.practice.tryout",
+  //     },
+  //   };
+
+  //   const newIncident = new Incident(incidentObject);
+  //   newIncident
+  //     .save() // Returns a promise after some time.
+  //     .then(() => {
+  //       // If the newIncident is saved in DB and it is not new, then...
+  //       assert(!newIncident.isNew);
+  //       done();
+  //     });
+  // });
 });
