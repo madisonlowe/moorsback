@@ -21,7 +21,10 @@ describe("Validating the schema", function () {
       },
     });
 
-    await assert.rejects(newIncident.save());
+    await assert.rejects(
+      newIncident.save(),
+      "Please tell us what kind of incident it was." // not rejecting properly.
+    );
   });
 
   it("Should throw vaidation error when missing 'when' KV pair", async function () {
