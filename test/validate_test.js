@@ -18,6 +18,10 @@ describe("Validating the schema", function () {
     };
 
     const newIncident = new Incident(incidentObject);
+    // attempt to save to test DB
+    // should be rejected
+    // specifically will receive validationerror from mongoose
+    // "Please tell us what kind of incident it was."
   });
 
   it("Should throw vaidation error when missing 'when' KV pair", async function () {
@@ -33,6 +37,10 @@ describe("Validating the schema", function () {
     };
 
     const newIncident = new Incident(incidentObject);
+    // attempt to save to test DB
+    // should be rejected
+    // specifically will receive validationerror from mongoose
+    // "Please tell us when the incident occurred."
   });
 
   it("Should throw vaidation error when missing 'description' KV pair", async function () {
@@ -48,6 +56,10 @@ describe("Validating the schema", function () {
     };
 
     const newIncident = new Incident(incidentObject);
+    // attempt to save to test DB
+    // should be rejected
+    // specifically will receive validationerror from mongoose
+    // "Please describe the incident."
   });
 
   it("Should not throw validation error.", async function () {
@@ -64,5 +76,7 @@ describe("Validating the schema", function () {
     };
 
     const newIncident = new Incident(incidentObject);
+    // attempt to save to test DB
+    // should succeed
   });
 });
