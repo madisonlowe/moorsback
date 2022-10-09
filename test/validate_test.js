@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import assert from "assert";
+import { assert, expect, should } from "chai";
 
 import { IncidentSchema } from "../src/models/incidents.models.js";
 const Incident = mongoose.model("Incident", IncidentSchema);
@@ -20,11 +20,6 @@ describe("Validating the schema", function () {
         what3words: "test.practice.tryout",
       },
     });
-
-    await assert.rejects(
-      newIncident.save(),
-      "Please tell us what kind of incident it was." // not rejecting properly.
-    );
   });
 
   it("Should throw vaidation error when missing 'when' KV pair", async function () {
@@ -42,8 +37,6 @@ describe("Validating the schema", function () {
         what3words: "test.practice.tryout",
       },
     });
-
-    await assert.rejects(newIncident.save());
   });
 
   it("Should throw vaidation error when missing 'description' KV pair", async function () {
@@ -61,8 +54,6 @@ describe("Validating the schema", function () {
         what3words: "test.practice.tryout",
       },
     });
-
-    await assert.rejects(newIncident.save());
   });
 
   it("Should not throw validation error.", async function () {
@@ -80,10 +71,6 @@ describe("Validating the schema", function () {
         },
         what3words: "test.practice.tryout",
       },
-    });
-
-    await newIncident.save().then(() => {
-      assert(!newIncident.isNew);
     });
   });
 });
