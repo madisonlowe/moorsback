@@ -5,7 +5,7 @@ import { IncidentSchema } from "../src/models/incidents.models.js";
 const Incident = mongoose.model("Incident", IncidentSchema);
 
 describe("Validating the schema", function () {
-  it("Should throw vaidation error when missing 'type' KV pair", async function () {
+  it("Should throw validation error when missing 'type' KV pair", async function () {
     const incidentObject = {
       when: "Test time of day or date description.",
       description: "Test incident.",
@@ -17,11 +17,13 @@ describe("Validating the schema", function () {
       },
     };
 
-    const newIncident = new Incident(incidentObject);
-    // attempt to save to test DB
-    // should be rejected
-    // specifically will receive validationerror from mongoose
-    // "Please tell us what kind of incident it was."
+    try {
+      await new Incident(incidentObject).save();
+    } catch (err) {
+      expect(err.errors.type.kind).equal("required");
+      expect(err.errors.type.path).equal("type");
+      expect(err._message).equal("Incident validation failed");
+    }
   });
 
   it("Should throw vaidation error when missing 'when' KV pair", async function () {
@@ -36,11 +38,13 @@ describe("Validating the schema", function () {
       },
     };
 
-    const newIncident = new Incident(incidentObject);
-    // attempt to save to test DB
-    // should be rejected
-    // specifically will receive validationerror from mongoose
-    // "Please tell us when the incident occurred."
+    try {
+      await new Incident(incidentObject).save();
+    } catch (err) {
+      expect(err.errors.when.kind).equal("required");
+      expect(err.errors.when.path).equal("when");
+      expect(err._message).equal("Incident validation failed");
+    }
   });
 
   it("Should throw vaidation error when missing 'description' KV pair", async function () {
@@ -55,11 +59,13 @@ describe("Validating the schema", function () {
       },
     };
 
-    const newIncident = new Incident(incidentObject);
-    // attempt to save to test DB
-    // should be rejected
-    // specifically will receive validationerror from mongoose
-    // "Please describe the incident."
+    try {
+      await new Incident(incidentObject).save();
+    } catch (err) {
+      expect(err.errors.description.kind).equal("required");
+      expect(err.errors.description.path).equal("description");
+      expect(err._message).equal("Incident validation failed");
+    }
   });
 
   it("Should not throw validation error.", async function () {
