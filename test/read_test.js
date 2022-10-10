@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import assert from "assert";
+import { assert, expect, should } from "chai";
 
 import { IncidentSchema } from "../src/models/incidents.models.js";
 const Incident = mongoose.model("Incident", IncidentSchema);
@@ -27,9 +27,8 @@ describe("Reading details of Incident", () => {
         "Testing reading a new incidentObject with Mocha in read_test.js.",
     })
       .then((incident) => {
-        assert(
-          incident.description === // This occasionally returns null TypeError? Not on every test.
-            "Testing reading a new incidentObject with Mocha in read_test.js."
+        expect(incident.description).equal(
+          "Testing reading a new incidentObject with Mocha in read_test.js."
         );
         done();
       })
