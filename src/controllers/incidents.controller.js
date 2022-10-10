@@ -43,6 +43,7 @@ export const updateIncidentById = (req, res) => {
         res.send(err);
       }
       res.json(incident);
+      console.log(incident);
     }
   );
 };
