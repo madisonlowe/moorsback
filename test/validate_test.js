@@ -152,11 +152,8 @@ describe("Validation and CastErrors for Strings in the schema", function () {
     try {
       await new Incident(incidentObject).save();
     } catch (err) {
-      for (let i = 0; i < err.length; i++) {
-        expect(err.errors[i].name).equal("ValidatorError");
-        expect(err._message).equal("Incident validation failed");
-        expect(err.name).equal("ValidationError");
-      }
+      expect(err.name).equal("ValidationError");
+      expect(err._message).equal("Incident validation failed");
     }
   });
 
@@ -180,14 +177,11 @@ describe("Validation and CastErrors for Strings in the schema", function () {
     try {
       await new Incident(incidentObject).save();
     } catch (err) {
-      for (let i = 0; i < err.length; i++) {
-        expect(err.errors[i].name).equal("CastError");
-        expect(err.errors[i].message).equal(
-          'Cast to string failed for value "{}" (type Object) at path "type"'
-        );
-        expect(err._message).equal("Incident validation failed");
-        expect(err.name).equal("ValidationError");
-      }
+      expect(err.name).equal("ValidationError");
+      expect(err._message).equal("Incident validation failed");
+      expect(err.message).equal(
+        'Incident validation failed: type: Cast to string failed for value "{}" (type Object) at path "type", when: Cast to string failed for value "{}" (type Object) at path "when", description: Cast to string failed for value "{}" (type Object) at path "description", location.address.firstline: Cast to string failed for value "{}" (type Object) at path "firstline", location.address.secondline: Cast to string failed for value "{}" (type Object) at path "secondline", location.address.postcode: Cast to string failed for value "{}" (type Object) at path "postcode", location.address.city: Cast to string failed for value "{}" (type Object) at path "city", location.address.county: Cast to string failed for value "{}" (type Object) at path "county", location.what3words: Cast to string failed for value "{}" (type Object) at path "location.what3words"'
+      );
     }
   });
 
@@ -211,14 +205,11 @@ describe("Validation and CastErrors for Strings in the schema", function () {
     try {
       await new Incident(incidentObject).save();
     } catch (err) {
-      for (let i = 0; i < err.length; i++) {
-        expect(err.errors[i].name).equal("CastError");
-        expect(err.errors[i].message).equal(
-          'Cast to string failed for value "[]" (type Array) at path "type"'
-        );
-        expect(err._message).equal("Incident validation failed");
-        expect(err.name).equal("ValidationError");
-      }
+      expect(err.name).equal("ValidationError");
+      expect(err._message).equal("Incident validation failed");
+      expect(err.message).equal(
+        'Incident validation failed: type: Cast to string failed for value "[]" (type Array) at path "type", when: Cast to string failed for value "[]" (type Array) at path "when", description: Cast to string failed for value "[]" (type Array) at path "description", location.address.firstline: Cast to string failed for value "[]" (type Array) at path "firstline", location.address.secondline: Cast to string failed for value "[]" (type Array) at path "secondline", location.address.postcode: Cast to string failed for value "[]" (type Array) at path "postcode", location.address.city: Cast to string failed for value "[]" (type Array) at path "city", location.address.county: Cast to string failed for value "[]" (type Array) at path "county", location.what3words: Cast to string failed for value "[]" (type Array) at path "location.what3words"'
+      );
     }
   });
 });
