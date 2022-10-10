@@ -67,22 +67,4 @@ describe("Validating the schema", function () {
       expect(err._message).equal("Incident validation failed");
     }
   });
-
-  it("Should not throw validation error.", async function () {
-    const incidentObject = {
-      type: "Validation Test",
-      when: "Test time of day or date description.",
-      description: "Test incident.",
-      location: {
-        address: {
-          firstline: "14 Testing Drive",
-          postcode: "T35 T1NG",
-        },
-      },
-    };
-
-    const newIncident = new Incident(incidentObject);
-    // attempt to save to test DB
-    // should succeed
-  });
 });
