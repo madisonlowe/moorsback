@@ -1,7 +1,5 @@
 import mongoose from "mongoose";
-
 import { IncidentSchema } from "../models/incidents.models.js";
-
 const Incident = mongoose.model("Incident", IncidentSchema);
 
 export const addIncident = (req, res) => {
@@ -10,8 +8,10 @@ export const addIncident = (req, res) => {
   newIncident.save((err, incident) => {
     if (err) {
       res.send(err);
+      console.log(err);
     }
     res.json(incident);
+    console.log(incident);
   });
 };
 
@@ -33,16 +33,18 @@ export const getIncidentById = (req, res) => {
   });
 };
 
-// UPDATE route not currently working on Postman tests.
 export const updateIncidentById = (req, res) => {
-  Incident.findOneAndUpdate({ _id: req.params.id }, req.body),
+  Incident.findOneAndUpdate(
+    { _id: req.params.id },
+    req.body,
     { new: true },
     (err, incident) => {
       if (err) {
         res.send(err);
       }
       res.json(incident);
-    };
+    }
+  );
 };
 
 export const deleteIncidentById = (req, res) => {

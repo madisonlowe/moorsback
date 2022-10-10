@@ -13,7 +13,7 @@ const allRoutes = (app) => {
     .route("/incidents/:id")
     .get(getIncidentById)
     .delete(deleteIncidentById)
-    .put(updateIncidentById);
+    .patch(updateIncidentById);
 };
 
 export default allRoutes;

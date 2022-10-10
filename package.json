@@ -26,5 +26,8 @@
     "mongodb": "^4.10.0",
     "mongoose": "^6.6.4",
     "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6"
   }
 }
