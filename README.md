@@ -14,5 +14,4 @@ In a similar vein, I decided to try out something new on the front-end, so I'm g
 
 ## Working On Next
 
-- Fix the bug in `test/read_test.js` where the outcome of the test that `"Finds incident with the correct description"` occasionally returns a TypeError for `null` while otherwise passing.
 - Expand on the tests for CRUD test files: `validate_test.js` could always go into more detail, but is currently contains the most comprehensive suites, so is bottom of the list for expansion.
