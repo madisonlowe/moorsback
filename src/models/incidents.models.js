@@ -66,7 +66,7 @@ export const IncidentSchema = new schema({
   },
 });
 
-export const testIncidentSchema = new schema({
+export const TestIncidentSchema = new schema({
   _id: {
     // For use only for testing! Don't overwrite _id to real database data!
     type: String,

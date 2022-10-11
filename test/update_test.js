@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 import { expect, assert, should } from "chai";
 
-import { testIncidentSchema } from "../src/models/incidents.models.js";
-const TestIncident = mongoose.model("TestIncident", testIncidentSchema);
+import { TestIncidentSchema } from "../src/models/incidents.models.js";
+const TestIncident = mongoose.model("TestIncident", TestIncidentSchema);
 
 describe("Updating an incident", () => {
   let incident;
