@@ -1,6 +1,6 @@
 # Moors Wildfire Tracker App (Back-end)
 
-This is the back-end repository for a remake of the wildfire tracker I made with [@rachelalk](https://github.com/rachelalk) during a one-day Couchbase Hackathon in August 2022.
+This is the back-end repository for a remake of the wildfire tracker I made with [@rachelalk](https://github.com/rachelalk) during a one-day Couchbase Hackathon in August 2022. You can see that original project here at this [couchbaseHackathon](https://github.com/madisonlowe/couchbaseHackathon) repository.
 
 This project is built using the Node.js with MongoDB and Mongoose, and Express, and unit tests are written with Mocha and Chai.
 
